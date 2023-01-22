@@ -1,4 +1,4 @@
-# AddSpisokDel
+# To-do list
 
 A simple android application for managing a list of items. It allows the user to add new items to the list, view existing items, and delete items from the list.
 
