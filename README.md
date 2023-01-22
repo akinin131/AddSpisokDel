@@ -7,7 +7,7 @@ A simple android application for managing a list of items. It allows the user to
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Installation
-1. Clone the repository:
+1.Clone the repository:
 git clone https://github.com/akinin131/AddSpisokDel.git
 
 Copy code
