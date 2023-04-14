@@ -7,10 +7,13 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import quiz.example.weather.APP
+import quiz.example.weather.screens.detail.BottomSheetDetail
+import quiz.example.weather.MainActivity
 import quiz.example.weather.R
+
 import quiz.example.weather.databinding.ItemLayoutBinding
 import quiz.example.weather.model.NoteModel
-import quiz.example.weather.screens.start.StartFragment
+
 import java.util.Collections.emptyList
 
 class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
@@ -52,7 +55,12 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
     override fun onViewAttachedToWindow(holder: NoteViewHolder) {
         super.onViewAttachedToWindow(holder)
         holder.itemView.setOnClickListener {
-            StartFragment.clickNote(ListNote[holder.adapterPosition])
+            val note = ListNote[holder.adapterPosition]
+            val bottomSheet = BottomSheetDetail.newInstanceDetail(note)
+            bottomSheet.show(
+                (holder.itemView.context as MainActivity).supportFragmentManager,
+                "MyBottomSheetDialogFragment"
+            )
         }
     }
 

@@ -10,23 +10,13 @@
         android:name="quiz.example.weather.screens.start.StartFragment"
         android:label="fragment_start"
         tools:layout="@layout/fragment_start" >
-        <action
-            android:id="@+id/action_startFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
+
         <action
             android:id="@+id/action_startFragment_to_addFragment2"
             app:destination="@id/addFragment2" />
     </fragment>
 
-    <fragment
-        android:id="@+id/detailFragment"
-        android:name="quiz.example.weather.screens.detail.DetailNoteFragment"
-        android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail">
-        <action
-            android:id="@+id/action_detailFragment_to_startFragment"
-            app:destination="@id/startFragment" />
-    </fragment>
+
 
     <fragment
         android:id="@+id/addFragment2"
@@ -37,4 +27,14 @@
             android:id="@+id/action_addFragment2_to_startFragment"
             app:destination="@id/startFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/tasks"
+        android:name="quiz.example.weather.screens.tasks.Tasks"
+        android:label="fragment_tasks"
+        tools:layout="@layout/fragment_tasks" />
+    <fragment
+        android:id="@+id/purposeFragment"
+        android:name="quiz.example.weather.screens.purpose.PurposeFragment"
+        android:label="fragment_purpose"
+        tools:layout="@layout/fragment_purpose" />
 </navigation>

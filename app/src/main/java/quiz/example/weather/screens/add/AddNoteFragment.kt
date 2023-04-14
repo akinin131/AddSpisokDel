@@ -4,15 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import quiz.example.weather.APP
-import quiz.example.weather.R
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import quiz.example.weather.databinding.FragmentAddBinding
 import quiz.example.weather.model.NoteModel
 
 
-class AddNoteFragment : Fragment() {
+class AddNoteFragment : BottomSheetDialogFragment() {
 
     lateinit var bunding: FragmentAddBinding
 
@@ -35,12 +33,8 @@ class AddNoteFragment : Fragment() {
             val title = bunding.etAddTitle.text.toString()
             val description = bunding.etAddDesc.text.toString()
             viewModel.insert(NoteModel(title = title, description = description)) {}
-            APP.navController.navigate(R.id.action_addFragment2_to_startFragment)
+            dismiss()
         }
-        bunding.buttonBack.setOnClickListener {
-            APP.navController.navigate(R.id.action_addFragment2_to_startFragment)
-        }
+
     }
-
-
 }

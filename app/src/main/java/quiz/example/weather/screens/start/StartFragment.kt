@@ -7,11 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
-import quiz.example.weather.APP
-import quiz.example.weather.R
 import quiz.example.weather.adapter.NoteAdapter
 import quiz.example.weather.databinding.FragmentStartBinding
-import quiz.example.weather.model.NoteModel
+import quiz.example.weather.screens.add.AddNoteFragment
 
 
 class StartFragment : Fragment() {
@@ -24,7 +22,7 @@ class StartFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
+
         binding = FragmentStartBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
@@ -44,16 +42,11 @@ class StartFragment : Fragment() {
 
             adapter.setList(listNotes.asReversed())
         }
-        binding.btnNext.setOnClickListener {
-            APP.navController.navigate(R.id.action_startFragment_to_addFragment2)
+
+        binding.AddNoteBtn.setOnClickListener {
+            val bottomSheetDialog = AddNoteFragment()
+            bottomSheetDialog.show(parentFragmentManager, "AddNoteFragment")
         }
     }
 
-    companion object {
-        fun clickNote(noteModel: NoteModel) {
-            val bundle = Bundle()
-            bundle.putSerializable("note", noteModel)
-            APP.navController.navigate(R.id.action_startFragment_to_detailFragment, bundle)
-        }
-    }
 }

@@ -2,6 +2,7 @@
     <string name="app_name">Weather</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_task_fragment">Hello task fragment</string>
     <string name="Task">Задача</string>
     <string name="TaskDescription">Описание задачи</string>
     <string name="Add">Добавить</string>
@@ -11,4 +12,6 @@
     <string name="description">Description</string>
     <string name="delete">Delete</string>
     <string name="back">Back</string>
+    <string name="progress">Уровень</string>
+    <string name="Tasks">Задачи</string>
 </resources>

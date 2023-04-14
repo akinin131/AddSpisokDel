@@ -4,25 +4,33 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import quiz.example.weather.APP
-import quiz.example.weather.R
-import quiz.example.weather.databinding.FragmentDetailBinding
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import quiz.example.weather.databinding.FragmentBottomSheetDetailBinding
 import quiz.example.weather.model.NoteModel
 
 
-class DetailNoteFragment : Fragment() {
+class BottomSheetDetail : BottomSheetDialogFragment() {
 
-    lateinit var binding: FragmentDetailBinding
+    lateinit var binding: FragmentBottomSheetDetailBinding
     lateinit var currentNote: NoteModel
+
+    companion object {
+        fun newInstanceDetail(note: NoteModel): BottomSheetDetail {
+            val args = Bundle()
+            args.putSerializable("note", note)
+            val fragment = BottomSheetDetail()
+            fragment.arguments = args
+            return fragment
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = FragmentDetailBinding.inflate(layoutInflater, container, false)
+        binding = FragmentBottomSheetDetailBinding.inflate(layoutInflater, container, false)
         currentNote = arguments?.getSerializable("note") as NoteModel
         return binding.root
     }
@@ -40,15 +48,8 @@ class DetailNoteFragment : Fragment() {
 
         binding.buttonDelete.setOnClickListener {
             viewModel.delete(currentNote) {}
-            APP.navController.navigate(R.id.action_detailFragment_to_startFragment)
+            dismiss()
 
         }
-
-        binding.buttonBack.setOnClickListener {
-            APP.navController.navigate(R.id.action_detailFragment_to_startFragment)
-        }
-
     }
-
-
 }
