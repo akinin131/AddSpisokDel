@@ -7,14 +7,15 @@ import kotlinx.coroutines.launch
 import quiz.example.weather.REPOSITORY
 import quiz.example.weather.model.NoteModel
 
-class AddViewModel : ViewModel() {
+class AddNoteViewModel : ViewModel() {
 
-    fun insert(noteModel: NoteModel, onSuccess:() -> Unit)=
-        viewModelScope.launch  (Dispatchers.IO){
-    REPOSITORY.insetrNote(noteModel){
-        onSuccess()
-    }
-    }
+    fun insert(noteModel: NoteModel, onSuccess: () -> Unit) =
+        viewModelScope.launch(Dispatchers.IO) {
+
+            REPOSITORY.insetrtNote(noteModel) {
+                onSuccess()
+            }
+        }
 
 
 }

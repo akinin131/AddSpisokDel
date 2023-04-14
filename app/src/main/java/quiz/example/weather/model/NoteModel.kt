@@ -7,11 +7,11 @@ import java.io.Serializable
 
 
 @Entity(tableName = "note_table")
-class NoteModel (
+class NoteModel(
     @PrimaryKey(autoGenerate = true)
-    var id: Int=0,
+    var id: Int = 0,
     @ColumnInfo
     var title: String = "",
     @ColumnInfo
     var description: String = ""
-        ) : Serializable
+) : Serializable

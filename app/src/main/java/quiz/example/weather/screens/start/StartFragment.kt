@@ -49,11 +49,11 @@ class StartFragment : Fragment() {
         }
     }
 
-    companion object{
-        fun clickNote(noteModel: NoteModel){
+    companion object {
+        fun clickNote(noteModel: NoteModel) {
             val bundle = Bundle()
-            bundle.putSerializable("note",noteModel)
-            APP.navController.navigate(R.id.action_startFragment_to_detailFragment,bundle)
+            bundle.putSerializable("note", noteModel)
+            APP.navController.navigate(R.id.action_startFragment_to_detailFragment, bundle)
         }
     }
 }

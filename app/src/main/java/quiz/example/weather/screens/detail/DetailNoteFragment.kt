@@ -12,17 +12,17 @@ import quiz.example.weather.databinding.FragmentDetailBinding
 import quiz.example.weather.model.NoteModel
 
 
-class DetailFragment : Fragment() {
+class DetailNoteFragment : Fragment() {
 
     lateinit var binding: FragmentDetailBinding
-    lateinit var currentNote:NoteModel
+    lateinit var currentNote: NoteModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding=FragmentDetailBinding.inflate(layoutInflater,container,false)
+        binding = FragmentDetailBinding.inflate(layoutInflater, container, false)
         currentNote = arguments?.getSerializable("note") as NoteModel
         return binding.root
     }
@@ -33,18 +33,18 @@ class DetailFragment : Fragment() {
     }
 
     private fun init() {
-        val viewModel = ViewModelProvider(this).get(DetailViewModel::class.java)
+        val viewModel = ViewModelProvider(this).get(DetailNoteViewModel::class.java)
 
         binding.itemTitle.text = currentNote.title
         binding.Description.text = currentNote.description
 
         binding.buttonDelete.setOnClickListener {
-            viewModel.delete(currentNote){}
-                APP.navController.navigate(R.id.action_detailFragment_to_startFragment)
+            viewModel.delete(currentNote) {}
+            APP.navController.navigate(R.id.action_detailFragment_to_startFragment)
 
         }
 
-        binding.buttonBack.setOnClickListener{
+        binding.buttonBack.setOnClickListener {
             APP.navController.navigate(R.id.action_detailFragment_to_startFragment)
         }
 

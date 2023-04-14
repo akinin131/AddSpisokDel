@@ -18,24 +18,24 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
 
     var ListNote = emptyList<NoteModel>()
 
-    class NoteViewHolder (view:View):RecyclerView.ViewHolder(view){
+    class NoteViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val binding = ItemLayoutBinding.bind(view)
         fun bind(note: NoteModel) {
-            binding.apply{
-                binding.textView3.text =note.title
+            binding.apply {
+                binding.textView3.text = note.title
             }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_layout, parent,false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_layout, parent, false)
         return NoteViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
-        holder.bind(ListNote [position])
-        holder.itemView.setOnClickListener{
-            Toast.makeText(APP, ""+position,Toast.LENGTH_LONG).show()
+        holder.bind(ListNote[position])
+        holder.itemView.setOnClickListener {
+            Toast.makeText(APP, "" + position, Toast.LENGTH_LONG).show()
         }
     }
 

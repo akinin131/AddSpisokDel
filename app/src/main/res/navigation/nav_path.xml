@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/detailFragment"
-        android:name="quiz.example.weather.screens.detail.DetailFragment"
+        android:name="quiz.example.weather.screens.detail.DetailNoteFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail">
         <action
@@ -30,7 +30,7 @@
 
     <fragment
         android:id="@+id/addFragment2"
-        android:name="quiz.example.weather.screens.add.AddFragment"
+        android:name="quiz.example.weather.screens.add.AddNoteFragment"
         android:label="fragment_add"
         tools:layout="@layout/fragment_add">
         <action

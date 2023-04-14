@@ -12,16 +12,15 @@ import quiz.example.weather.databinding.FragmentAddBinding
 import quiz.example.weather.model.NoteModel
 
 
-class AddFragment : Fragment() {
+class AddNoteFragment : Fragment() {
 
-        lateinit var bunding: FragmentAddBinding
+    lateinit var bunding: FragmentAddBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        bunding=FragmentAddBinding.inflate(layoutInflater, container, false)
+        bunding = FragmentAddBinding.inflate(layoutInflater, container, false)
         return bunding.root
     }
 
@@ -31,14 +30,14 @@ class AddFragment : Fragment() {
     }
 
     private fun init() {
-        val viewModel=ViewModelProvider(this).get(AddViewModel::class.java)
+        val viewModel = ViewModelProvider(this).get(AddNoteViewModel::class.java)
         bunding.buttonAdd.setOnClickListener {
             val title = bunding.etAddTitle.text.toString()
             val description = bunding.etAddDesc.text.toString()
-         viewModel.insert(NoteModel(title =title, description = description)){}
+            viewModel.insert(NoteModel(title = title, description = description)) {}
             APP.navController.navigate(R.id.action_addFragment2_to_startFragment)
         }
-        bunding.buttonBack.setOnClickListener{
+        bunding.buttonBack.setOnClickListener {
             APP.navController.navigate(R.id.action_addFragment2_to_startFragment)
         }
     }

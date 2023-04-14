@@ -7,10 +7,10 @@ import kotlinx.coroutines.launch
 import quiz.example.weather.REPOSITORY
 import quiz.example.weather.model.NoteModel
 
-class DetailViewModel : ViewModel() {
-    fun delete(noteModel: NoteModel, onSuccess:() -> Unit)=
-        viewModelScope.launch  (Dispatchers.IO){
-            REPOSITORY.deleteNote(noteModel){
+class DetailNoteViewModel : ViewModel() {
+    fun delete(noteModel: NoteModel, onSuccess: () -> Unit) =
+        viewModelScope.launch(Dispatchers.IO) {
+            REPOSITORY.deleteNote(noteModel) {
                 onSuccess()
             }
         }

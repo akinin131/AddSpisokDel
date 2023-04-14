@@ -6,14 +6,16 @@ import quiz.example.weather.model.NoteModel
 
 
 @Dao
-interface NotDao {
+interface NoteDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insert(noteModel: NoteModel)
 
     @Delete
-     fun delete(noteModel: NoteModel)
+    fun delete(noteModel: NoteModel)
 
-    @Query ("SELECT *from note_table")
-    fun getAllNotes():LiveData<List<NoteModel>>
+    @Query("SELECT *from note_table")
+    fun getAllNotes(): LiveData<List<NoteModel>>
 }
+
+
