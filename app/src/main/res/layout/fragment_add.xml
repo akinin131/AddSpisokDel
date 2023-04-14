@@ -1,37 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fregmentAdd"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
     <EditText
         android:id="@+id/etAddTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="620dp"
-        android:hint="Задача"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:layout_marginBottom="620dp"
+        android:autofillHints="@string/Task"
+        android:hint="@string/Task"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    </EditText>
 
     <EditText
         android:id="@+id/etAddDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="528dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:hint="Описание задачи"
+        android:layout_marginBottom="528dp"
+        android:autofillHints="@string/TaskDescription"
+        android:hint="@string/TaskDescription"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-    </EditText>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/button_add"
@@ -39,7 +38,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="124dp"
         android:layout_marginBottom="108dp"
-        android:text="Добавить"
+        android:text="@string/Add"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -50,7 +49,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="124dp"
         android:layout_marginBottom="40dp"
-        android:text="Назад"
+        android:text="@string/ComeBack"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

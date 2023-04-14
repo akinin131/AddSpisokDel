@@ -35,7 +35,7 @@ class StartFragment : Fragment() {
     }
 
     private fun init() {
-        var viewModel = ViewModelProvider(this).get(StartViewModel::class.java)
+        val viewModel = ViewModelProvider(this).get(StartViewModel::class.java)
         viewModel.initDataBase()
         recyclerView = binding.rvNotes
         adapter = NoteAdapter()

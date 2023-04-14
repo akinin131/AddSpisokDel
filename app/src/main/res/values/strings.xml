@@ -2,4 +2,13 @@
     <string name="app_name">Weather</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Task">Задача</string>
+    <string name="TaskDescription">Описание задачи</string>
+    <string name="Add">Добавить</string>
+    <string name="ComeBack">Назад</string>
+    <string name="textview">TextView</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="delete">Delete</string>
+    <string name="back">Back</string>
 </resources>
