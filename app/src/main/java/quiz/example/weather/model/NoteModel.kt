@@ -13,5 +13,7 @@ class NoteModel(
     @ColumnInfo
     var title: String = "",
     @ColumnInfo
-    var description: String = ""
+    var description: String = "",
+    @ColumnInfo
+    var isCompleted: Boolean = false // add boolean field for checkbox
 ) : Serializable

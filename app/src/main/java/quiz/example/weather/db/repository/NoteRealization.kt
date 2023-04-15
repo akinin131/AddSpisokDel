@@ -17,4 +17,9 @@ class NoteRealization(private val noteDao: NoteDao) : NoteRepository {
         noteDao.delete(noteModel)
         onSuccess()
     }
+
+    override suspend fun upDateNote(noteModel: NoteModel, onSuccess: () -> Unit) {
+        noteDao.update(noteModel)
+        onSuccess()
+    }
 }

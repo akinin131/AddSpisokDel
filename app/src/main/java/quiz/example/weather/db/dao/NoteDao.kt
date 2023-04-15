@@ -14,6 +14,9 @@ interface NoteDao {
     @Delete
     fun delete(noteModel: NoteModel)
 
+    @Update
+    fun update(noteModel: NoteModel)
+
     @Query("SELECT *from note_table")
     fun getAllNotes(): LiveData<List<NoteModel>>
 }

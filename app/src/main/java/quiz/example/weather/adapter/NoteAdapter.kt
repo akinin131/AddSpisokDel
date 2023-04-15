@@ -5,14 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
-import quiz.example.weather.APP
+import quiz.example.weather.*
 import quiz.example.weather.screens.detail.BottomSheetDetail
-import quiz.example.weather.MainActivity
-import quiz.example.weather.R
 
 import quiz.example.weather.databinding.ItemLayoutBinding
+import quiz.example.weather.db.dao.NoteDao
 import quiz.example.weather.model.NoteModel
+import quiz.example.weather.screens.add.AddNoteViewModel
+import quiz.example.weather.screens.detail.DetailNoteViewModel
 
 import java.util.Collections.emptyList
 
@@ -26,9 +28,21 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
         fun bind(note: NoteModel) {
             binding.apply {
                 binding.textView3.text = note.title
+
+                binding.checkBox.isChecked = note.isCompleted
+
+                binding.checkBox.setOnCheckedChangeListener { _, isChecked ->
+                    note.isCompleted = isChecked
+
+                    UpdateNoteViewModel().update(note) {}
+
+                }
+
             }
         }
+
     }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_layout, parent, false)
@@ -40,6 +54,7 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
         holder.itemView.setOnClickListener {
             Toast.makeText(APP, "" + position, Toast.LENGTH_LONG).show()
         }
+
     }
 
     override fun getItemCount(): Int {
