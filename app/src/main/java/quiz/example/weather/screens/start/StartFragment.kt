@@ -47,8 +47,5 @@ class StartFragment : Fragment() {
             val bottomSheetDialog = AddNoteFragment()
             bottomSheetDialog.show(parentFragmentManager, "AddNoteFragment")
         }
-
-
     }
-
 }

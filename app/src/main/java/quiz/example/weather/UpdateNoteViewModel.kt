@@ -3,7 +3,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import quiz.example.weather.REPOSITORY
 import quiz.example.weather.model.NoteModel
 
 class UpdateNoteViewModel : ViewModel() {
@@ -14,3 +13,4 @@ class UpdateNoteViewModel : ViewModel() {
             }
         }
 }
+

@@ -5,13 +5,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import androidx.room.migration.Migration
-import androidx.sqlite.db.SupportSQLiteDatabase
 import quiz.example.weather.db.dao.NoteDao
 import quiz.example.weather.model.NoteModel
 
 
-@Database(entities = [NoteModel::class], version = 2)
+@Database(entities = [NoteModel::class], version = 4)
 abstract class NoteDataBase : RoomDatabase() {
     abstract fun getNotDao(): NoteDao
 

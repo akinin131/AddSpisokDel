@@ -1,73 +1,67 @@
 package quiz.example.weather.adapter
 
-import android.annotation.SuppressLint
+import android.graphics.Paint
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import quiz.example.weather.*
 import quiz.example.weather.screens.detail.BottomSheetDetail
 
 import quiz.example.weather.databinding.ItemLayoutBinding
-import quiz.example.weather.db.dao.NoteDao
 import quiz.example.weather.model.NoteModel
-import quiz.example.weather.screens.add.AddNoteViewModel
-import quiz.example.weather.screens.detail.DetailNoteViewModel
 
 import java.util.Collections.emptyList
 
 class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
 
+    var listNote = emptyList<NoteModel>()
 
-    var ListNote = emptyList<NoteModel>()
-
-    class NoteViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        private val binding = ItemLayoutBinding.bind(view)
+    inner class NoteViewHolder(private val binding: ItemLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(note: NoteModel) {
             binding.apply {
-                binding.textView3.text = note.title
-
-                binding.checkBox.isChecked = note.isCompleted
-
-                binding.checkBox.setOnCheckedChangeListener { _, isChecked ->
+                textView3.text = note.title
+                checkBox.setOnCheckedChangeListener(null) // Удалите существующий прослушиватель, чтобы избежать дублирования обновлений.
+                checkBox.isChecked = note.isCompleted
+                checkBox.setOnCheckedChangeListener { _, isChecked ->
                     note.isCompleted = isChecked
-
                     UpdateNoteViewModel().update(note) {}
-
                 }
-
+                if (note.isCompleted) {
+                    textView3.paintFlags = textView3.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+                    checkBox.isChecked = true
+                } else {
+                    textView3.paintFlags = textView3.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
+                    checkBox.isChecked = false
+                }
             }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_layout, parent, false)
-        return NoteViewHolder(view)
+        val binding = ItemLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return NoteViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
-        holder.bind(ListNote[position])
+        val note = listNote[position]
+        holder.bind(note)
         holder.itemView.setOnClickListener {
-            Toast.makeText(APP, "" + position, Toast.LENGTH_LONG).show()
+            Toast.makeText(it.context, "$position", Toast.LENGTH_LONG).show()
         }
     }
 
-    override fun getItemCount(): Int {
-        return ListNote.size
-    }
+    override fun getItemCount() = listNote.size
 
-    @SuppressLint("NotifyDataSetChanged")
     fun setList(list: List<NoteModel>) {
-        ListNote = list
+        listNote = list
         notifyDataSetChanged()
     }
 
     override fun onViewAttachedToWindow(holder: NoteViewHolder) {
         super.onViewAttachedToWindow(holder)
         holder.itemView.setOnClickListener {
-            val note = ListNote[holder.adapterPosition]
+            val note = listNote[holder.adapterPosition]
             val bottomSheet = BottomSheetDetail.newInstanceDetail(note)
             bottomSheet.show(
                 (holder.itemView.context as MainActivity).supportFragmentManager,
@@ -80,6 +74,7 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
         holder.itemView.setOnClickListener(null)
     }
 }
+
 
 
 
