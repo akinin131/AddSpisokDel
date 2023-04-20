@@ -5,7 +5,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="6dp"
     app:cardCornerRadius="4dp"
-    android:layout_margin="2dp">
+    app:cardBackgroundColor="@color/background_btn"
+    android:layout_margin="2dp"
+    >
 
     <TextView
         android:id="@+id/textView3"
@@ -21,5 +23,7 @@
         android:id="@+id/checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:buttonTint="@color/green"
         />
+
 </androidx.cardview.widget.CardView>

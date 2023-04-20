@@ -14,12 +14,10 @@
         app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/nav_path"
         tools:ignore="FragmentTagUsage">
-
     </fragment>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -27,11 +25,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-
         android:background="#A79B9B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:itemTextColor="@color/bottom_nav_color_selector"
         app:menu="@menu/bottom_nav_menu"
         tools:ignore="MissingConstraints" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -35,6 +35,5 @@ class AddNoteFragment : BottomSheetDialogFragment() {
             viewModel.insert(NoteModel(title = title, description = description)) {}
             dismiss()
         }
-
     }
 }
