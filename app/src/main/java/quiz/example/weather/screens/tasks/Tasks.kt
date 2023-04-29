@@ -17,7 +17,6 @@ class Tasks : Fragment() {
     private lateinit var binding: FragmentTasksBinding
 
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,20 +29,21 @@ class Tasks : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         init()
+
     }
+
     private fun init() {
-        binding.progressBar.max = 100
 
-        ObjectAnimator.ofInt(binding.progressBar,"progress",value).setDuration(1000).start()
+        binding.progressBar.max = 100
+        binding.progressBar.progress = value
+        binding.textView.text = value.toString()
 
     }
+
     class MyClass {
         companion object {
             var value = 0
 
         }
     }
-
-
-
 }

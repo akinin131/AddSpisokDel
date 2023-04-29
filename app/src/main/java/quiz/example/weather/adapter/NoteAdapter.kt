@@ -10,12 +10,14 @@ import quiz.example.weather.screens.detail.BottomSheetDetail
 
 import quiz.example.weather.databinding.ItemLayoutBinding
 import quiz.example.weather.model.NoteModel
+import quiz.example.weather.screens.tasks.Tasks.MyClass.Companion.value
 
 import java.util.Collections.emptyList
 
 class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
 
     var listNote = emptyList<NoteModel>()
+  //  private lateinit var mainActivity:MainActivity
 
     inner class NoteViewHolder(private val binding: ItemLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(note: NoteModel) {
@@ -26,13 +28,27 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
                 checkBox.setOnCheckedChangeListener { _, isChecked ->
                     note.isCompleted = isChecked
                     UpdateNoteViewModel().update(note) {}
+                    if (note.isCompleted) {
+                        checkBox.isChecked = true
+                        value += 1
+                        // mainActivity.saveData(value)
+                    } else {
+                        checkBox.isChecked = false
+                        if(value>0){
+                            value -= 1
+                        }
+                    }
                 }
                 if (note.isCompleted) {
                     textView3.paintFlags = textView3.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
                     checkBox.isChecked = true
+
+                   // mainActivity.saveData(value)
                 } else {
                     textView3.paintFlags = textView3.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
                     checkBox.isChecked = false
+
+                    //mainActivity.saveData(value)
                 }
             }
         }
