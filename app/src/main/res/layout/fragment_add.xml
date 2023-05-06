@@ -2,9 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
     android:background="@color/background"
-    >
+    android:orientation="vertical">
 
     <View
         android:layout_width="match_parent"
@@ -16,15 +15,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
         android:layout_marginBottom="30dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
         android:autofillHints="@string/Task"
         android:hint="@string/Task"
         android:inputType="text"
-    />
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
 
     <EditText
         android:id="@+id/etAddDesc"
@@ -33,26 +31,24 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="10dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
         android:autofillHints="@string/TaskDescription"
         android:hint="@string/TaskDescription"
         android:inputType="text"
-        />
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_add"
         android:layout_width="160dp"
         android:layout_height="45dp"
         android:layout_marginStart="124dp"
-        android:layout_marginBottom="108dp"
         android:layout_marginTop="30dp"
-        android:text="@string/Add"
-        android:shadowRadius="15"
-        android:textSize="18sp"
+        android:layout_marginBottom="108dp"
         android:background="@color/background_btn"
-        android:textColor="@color/white"
+        android:shadowRadius="15"
+        android:text="@string/Add"
         android:textAllCaps="false"
-         />
+        android:textColor="@color/white"
+        android:textSize="18sp" />
 
 </LinearLayout>

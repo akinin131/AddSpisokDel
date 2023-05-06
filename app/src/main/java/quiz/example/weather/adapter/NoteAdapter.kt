@@ -1,25 +1,27 @@
 package quiz.example.weather.adapter
 
+import android.annotation.SuppressLint
 import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import quiz.example.weather.*
-import quiz.example.weather.screens.detail.BottomSheetDetail
+import quiz.example.weather.screens.BottomSheetDetail
 
 import quiz.example.weather.databinding.ItemLayoutBinding
 import quiz.example.weather.model.NoteModel
-import quiz.example.weather.screens.tasks.Tasks.MyClass.Companion.value
+import quiz.example.weather.screens.ProgressFragment.MyClass.Companion.PointsForCompletedTasksStatic
+import quiz.example.weather.viewModel.UpdateNoteViewModel
 
 import java.util.Collections.emptyList
 
 class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
 
     var listNote = emptyList<NoteModel>()
-  //  private lateinit var mainActivity:MainActivity
 
-    inner class NoteViewHolder(private val binding: ItemLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class NoteViewHolder(private val binding: ItemLayoutBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(note: NoteModel) {
             binding.apply {
                 textView3.text = note.title
@@ -30,25 +32,25 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
                     UpdateNoteViewModel().update(note) {}
                     if (note.isCompleted) {
                         checkBox.isChecked = true
-                        value += 1
-                        // mainActivity.saveData(value)
+                        PointsForCompletedTasksStatic += 1
+
                     } else {
                         checkBox.isChecked = false
-                        if(value>0){
-                            value -= 1
+                        if (PointsForCompletedTasksStatic > 0) {
+                            PointsForCompletedTasksStatic -= 1
                         }
                     }
                 }
+
                 if (note.isCompleted) {
                     textView3.paintFlags = textView3.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
                     checkBox.isChecked = true
 
-                   // mainActivity.saveData(value)
                 } else {
-                    textView3.paintFlags = textView3.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
+                    textView3.paintFlags =
+                        textView3.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
                     checkBox.isChecked = false
 
-                    //mainActivity.saveData(value)
                 }
             }
         }
@@ -69,6 +71,7 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
 
     override fun getItemCount() = listNote.size
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setList(list: List<NoteModel>) {
         listNote = list
         notifyDataSetChanged()

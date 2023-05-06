@@ -1,4 +1,4 @@
-package quiz.example.weather.screens.detail
+package quiz.example.weather.screens
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import quiz.example.weather.databinding.FragmentBottomSheetDetailBinding
 import quiz.example.weather.model.NoteModel
+import quiz.example.weather.viewModel.DetailNoteViewModel
 
 
 class BottomSheetDetail : BottomSheetDialogFragment() {
@@ -49,7 +50,6 @@ class BottomSheetDetail : BottomSheetDialogFragment() {
         binding.buttonDelete.setOnClickListener {
             viewModel.delete(currentNote) {}
             dismiss()
-
         }
     }
 }

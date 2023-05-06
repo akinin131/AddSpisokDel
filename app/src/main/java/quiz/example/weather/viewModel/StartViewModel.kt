@@ -1,4 +1,4 @@
-package quiz.example.weather.screens.start
+package quiz.example.weather.viewModel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

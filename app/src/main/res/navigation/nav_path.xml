@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/startFragment"
-        android:name="quiz.example.weather.screens.start.StartFragment"
+        android:name="quiz.example.weather.screens.StartFragment"
         android:label="fragment_start"
         tools:layout="@layout/fragment_start" >
 
@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/addFragment2"
-        android:name="quiz.example.weather.screens.add.AddNoteFragment"
+        android:name="quiz.example.weather.screens.AddNoteFragment"
         android:label="fragment_add"
         tools:layout="@layout/fragment_add">
         <action
@@ -29,12 +29,12 @@
     </fragment>
     <fragment
         android:id="@+id/tasks"
-        android:name="quiz.example.weather.screens.tasks.Tasks"
+        android:name="quiz.example.weather.screens.ProgressFragment"
         android:label="fragment_tasks"
-        tools:layout="@layout/fragment_tasks" />
+        tools:layout="@layout/fragment_progress" />
     <fragment
         android:id="@+id/purposeFragment"
-        android:name="quiz.example.weather.screens.purpose.PurposeFragment"
+        android:name="quiz.example.weather.screens.PurposeFragment"
         android:label="fragment_purpose"
         tools:layout="@layout/fragment_purpose" />
 </navigation>

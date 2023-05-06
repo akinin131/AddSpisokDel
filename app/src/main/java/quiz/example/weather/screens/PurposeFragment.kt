@@ -1,4 +1,4 @@
-package quiz.example.weather.screens.purpose
+package quiz.example.weather.screens
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -1,10 +1,9 @@
-package quiz.example.weather.screens.start
+package quiz.example.weather.screens
 
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,8 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import quiz.example.weather.adapter.NoteAdapter
 import quiz.example.weather.databinding.FragmentStartBinding
-import quiz.example.weather.screens.add.AddNoteFragment
-import quiz.example.weather.screens.tasks.Tasks
+import quiz.example.weather.viewModel.StartViewModel
 
 class StartFragment : Fragment() {
 
@@ -35,7 +33,7 @@ class StartFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         init()
         preferences = requireActivity().getSharedPreferences("TABLE", Context.MODE_PRIVATE)
-        Tasks.MyClass.value = preferences?.getInt("counter", 0)!!
+        ProgressFragment.MyClass.PointsForCompletedTasksStatic = preferences?.getInt("counter", 0)!!
 
     }
 
@@ -65,7 +63,7 @@ class StartFragment : Fragment() {
     }
 
     override fun onDestroyView() {
-        saveData(Tasks.MyClass.value)
+        saveData(ProgressFragment.MyClass.PointsForCompletedTasksStatic)
         super.onDestroyView()
     }
 }

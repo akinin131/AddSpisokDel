@@ -3,17 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".screens.purpose.PurposeFragment"
     android:background="@color/background"
-    >
+    tools:context=".screens.PurposeFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
         android:text="Ваши цели"
-        android:textSize="24sp"
         android:textColor="@color/white"
-        />
+        android:textSize="24sp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
