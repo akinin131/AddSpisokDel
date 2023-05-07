@@ -6,20 +6,22 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import quiz.example.weather.databinding.FragmentAddBinding
+import quiz.example.weather.R
+import quiz.example.weather.databinding.FragmentAddBottomSheetBinding
+
 import quiz.example.weather.model.NoteModel
 import quiz.example.weather.viewModel.AddNoteViewModel
 
 
-class AddNoteFragment : BottomSheetDialogFragment() {
+class BottomSheetAddNote : BottomSheetDialogFragment() {
 
-    lateinit var bunding: FragmentAddBinding
+    lateinit var bunding: FragmentAddBottomSheetBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        bunding = FragmentAddBinding.inflate(layoutInflater, container, false)
+        bunding = FragmentAddBottomSheetBinding.inflate(layoutInflater, container, false)
         return bunding.root
     }
 
@@ -37,4 +39,5 @@ class AddNoteFragment : BottomSheetDialogFragment() {
             dismiss()
         }
     }
+    override fun getTheme() = R.style.AppBottomSheetDialogTheme
 }

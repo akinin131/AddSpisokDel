@@ -8,9 +8,9 @@ import quiz.example.weather.model.LevelModel
 object LevelData {
 
     fun getLevelUser(context: Context) = listOf(
-        LevelModel(context.getString(R.string.Worm), 7),
-        LevelModel(context.getString(R.string.Newbie), 9),
-        LevelModel(context.getString(R.string.Student), 11),
+        LevelModel(context.getString(R.string.Worm), 50),
+        LevelModel(context.getString(R.string.Newbie), 100),
+        LevelModel(context.getString(R.string.Student), 200),
         LevelModel(context.getString(R.string.Amateur), 400),
         LevelModel(context.getString(R.string.Advanced), 600),
         LevelModel(context.getString(R.string.Expert), 900),

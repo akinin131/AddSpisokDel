@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import quiz.example.weather.R
 import quiz.example.weather.databinding.FragmentBottomSheetDetailBinding
 import quiz.example.weather.model.NoteModel
 import quiz.example.weather.viewModel.DetailNoteViewModel
@@ -52,4 +53,6 @@ class BottomSheetDetail : BottomSheetDialogFragment() {
             dismiss()
         }
     }
+
+    override fun getTheme() = R.style.AppBottomSheetDialogTheme
 }

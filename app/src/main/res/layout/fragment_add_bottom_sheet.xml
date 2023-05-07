@@ -2,20 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/background"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/rounded_corners"
     android:orientation="vertical">
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="?android:attr/listDivider" />
-
+    <ImageView
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:srcCompat="@android:drawable/button_onoff_indicator_off" />
     <EditText
         android:id="@+id/etAddTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="30dp"
         android:autofillHints="@string/Task"
@@ -30,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="140dp"
         android:autofillHints="@string/TaskDescription"
         android:hint="@string/TaskDescription"
         android:inputType="text"
@@ -41,10 +47,10 @@
         android:id="@+id/button_add"
         android:layout_width="160dp"
         android:layout_height="45dp"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="108dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginBottom="180dp"
         android:background="@color/background_btn"
+        android:layout_gravity="center_horizontal"
         android:shadowRadius="15"
         android:text="@string/Add"
         android:textAllCaps="false"

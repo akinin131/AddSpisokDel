@@ -20,9 +20,9 @@
 
     <fragment
         android:id="@+id/addFragment2"
-        android:name="quiz.example.weather.screens.AddNoteFragment"
+        android:name="quiz.example.weather.screens.BottomSheetAddNote"
         android:label="fragment_add"
-        tools:layout="@layout/fragment_add">
+        tools:layout="@layout/fragment_add_bottom_sheet">
         <action
             android:id="@+id/action_addFragment2_to_startFragment"
             app:destination="@id/startFragment" />

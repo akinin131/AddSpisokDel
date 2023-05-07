@@ -50,7 +50,7 @@ class StartFragment : Fragment() {
         }
 
         binding.AddNoteBtn.setOnClickListener {
-            val bottomSheetDialog = AddNoteFragment()
+            val bottomSheetDialog = BottomSheetAddNote()
             bottomSheetDialog.show(parentFragmentManager, "AddNoteFragment")
         }
     }

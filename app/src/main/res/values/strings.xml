@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Weather</string>
+    <string name="app_name">Список дел</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hello_task_fragment">Hello task fragment</string>
@@ -16,25 +16,25 @@
     <string name="Tasks">Задачи</string>
 
     // Уровни начало
-    <string name="Worm">Ваш уровень червяк</string>
-    <string name="Newbie">Ваш уровень новичок</string>
-    <string name="Student">Ваш уровень ученик</string>
-    <string name="Amateur">Ваш уровень любитель</string>
-    <string name="Advanced">Ваш уровень продвинутый</string>
-    <string name="Expert">Ваш уровень эксперт</string>
-    <string name="Master">Ваш уровень мастер</string>
-    <string name="Summoned">Ваш уровень призванный</string>
-    <string name="Legend">Ваш уровень легенда</string>
-    <string name="King">Ваш уровень титан</string>
-    <string name="Titanium">Ваш уровень бог</string>
-    <string name="God">Ваш уровень божество</string>
-    <string name="TDeity">Ваш уровень гуру</string>
-    <string name="TGuru">Ваш уровень волшебник</string>
-    <string name="Wizard">Ваш уровень непобедимый</string>
-    <string name="Superman">Ваш уровень сверхчеловек</string>
-    <string name="Mutant">Ваш уровень мутант</string>
-    <string name="Monster">Ваш уровень чудовище</string>
-    <string name="Immortal">Ваш уровень Бессмертный</string>
+    <string name="Worm">Ваш уровень: червяк</string>
+    <string name="Newbie">Ваш уровень: новичок</string>
+    <string name="Student">Ваш уровень: ученик</string>
+    <string name="Amateur">Ваш уровень: любитель</string>
+    <string name="Advanced">Ваш уровень: продвинутый</string>
+    <string name="Expert">Ваш уровень: эксперт</string>
+    <string name="Master">Ваш уровень: мастер</string>
+    <string name="Summoned">Ваш уровень: призванный</string>
+    <string name="Legend">Ваш уровень: легенда</string>
+    <string name="King">Ваш уровень: титан</string>
+    <string name="Titanium">Ваш уровень: бог</string>
+    <string name="God">Ваш уровень: божество</string>
+    <string name="TDeity">Ваш уровень: гуру</string>
+    <string name="TGuru">Ваш уровень: волшебник</string>
+    <string name="Wizard">Ваш уровень: непобедимый</string>
+    <string name="Superman">Ваш уровень: сверхчеловек</string>
+    <string name="Mutant">Ваш уровень: мутант</string>
+    <string name="Monster">Ваш уровень: чудовище</string>
+    <string name="Immortal">Ваш уровень: Бессмертный</string>
     // Уровни конец
 
 </resources>
